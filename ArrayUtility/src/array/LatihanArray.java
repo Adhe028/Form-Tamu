@@ -8,6 +8,19 @@ import  javax.swing.table.DefaultTableModel;
 public class LatihanArray extends javax.swing.JFrame {
     DefaultTableModel model;
     int index_baris;
+    
+    void filterangka(KeyEvent b){
+        if (Character.isAlphabetic(b.getKeyChar())) {
+            b.consume();
+            JOptionPane.showMessageDialog(null, "harus di isi dengan angka");
+        }
+    }
+    void filterhuruf(KeyEvent c){
+        if (Character.isDigit(c.getKeyChar())) {
+            c.consume();
+            JOptionPane.showMessageDialog(null, "harus di isi dengan huruf");
+        }
+    }
 
     public LatihanArray() {
         initComponents();
@@ -17,6 +30,7 @@ public class LatihanArray extends javax.swing.JFrame {
         };
         jTable1.setModel(model);
     }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
